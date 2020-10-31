@@ -4,7 +4,9 @@ services:
 before_install:
   - docker build -t aminux/docker-react -f Dockerfile.dev .
 script:
-  - docker run aminux/docker-react npm run test -- --coverage
+  - docker run -e CI=true aminux/docker-react npm run test
+# - docker run aminux/docker-react npm run test -- --coverage --Depricated
+
 # deploy:
 #   provider: elasticbeanstalk
 #   region: 'us-east-2'
