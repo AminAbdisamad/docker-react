@@ -2,7 +2,8 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t aminux/docker-react -f Dockerfile.dev .
+  #   - docker build -t aminux/docker-react -f Dockerfile.dev .
+  - docker build -t aminux/docker-react -f .
 script:
   - docker run -e CI=true aminux/docker-react npm run test
 # - docker run aminux/docker-react npm run test -- --coverage --Depricated
