@@ -7,15 +7,15 @@ script:
   - docker run -e CI=true aminux/docker-react npm run test
 # - docker run aminux/docker-react npm run test -- --coverage --Depricated
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: 'us-east-2'
-#   app: 'docker-react'
-#   env: 'DockerReact-env'
-#   backet_name: 'elasticbeanstalk-us-east-2-821598540645'
-#   backet_path: 'docker-react'
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY_ID
-#   secret_access_key:
-#     secure: '$AWS_SECRET_ACCESS_KEY'
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'docker-react'
+  env: 'DockerReact-env'
+  backet_name: 'elasticbeanstalk-us-east-2-821598540645'
+  backet_path: 'docker-react'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key:
+    secure: '$AWS_SECRET_ACCESS_KEY'
